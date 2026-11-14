@@ -1,0 +1,27 @@
+{
+  "name": "WordPress Development",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "wordpress",
+  "workspaceFolder": "/var/www/html",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers-contrib/features/wp-cli:1": {}
+  },
+  "forwardPorts":,
+  "portsAttributes": {
+    "8080": {
+      "label": "WordPress Site",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "bash /workspaces/${localWorkspaceFolderBasename}/.devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "wordpresstoolbox.wordpress-toolbox"
+      ]
+    }
+  }
+}
+
