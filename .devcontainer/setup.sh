@@ -1,8 +1,15 @@
 #!/bin/bash
 set -e
 
-# Wait for the database to be ready
-until mysqladmin ping -h"db" -u"wordpress" -p"wordpress_password" --silent; do
+# Install WP-CLI directly
+if ! command -v wp &> /dev/null; then
+    curl -O https://githubusercontent.com
+    chmod +x wp-cli.phar
+    mv wp-cli.phar /usr/local/bin/wp
+fi
+
+# Wait for MariaDB to be ready using PHP
+until php -r 'new PDO("mysql:host=db;dbname=wordpress", "wordpress", "wordpress_password");' 2>/dev/null; do
     echo "Waiting for database..."
     sleep 2
 done
