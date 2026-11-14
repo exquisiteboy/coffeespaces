@@ -2,18 +2,18 @@
   "name": "WordPress Development",
   "dockerComposeFile": "docker-compose.yml",
   "service": "wordpress",
-  "workspaceFolder": "/var/www/html",
+  "workspaceFolder": "/workspaces",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {}
   },
   "forwardPorts":,
   "portsAttributes": {
-    "8080": {
+    "80": {
       "label": "WordPress Site",
       "onAutoForward": "notify"
     }
   },
-  "postCreateCommand": "bash /workspaces/${localWorkspaceFolderBasename}/.devcontainer/setup.sh",
+  "postCreateCommand": "bash /workspaces/.devcontainer/setup.sh",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -23,5 +23,6 @@
     }
   }
 }
+
 
 
