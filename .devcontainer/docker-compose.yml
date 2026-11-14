@@ -12,9 +12,8 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress_password
       WORDPRESS_DB_NAME: wordpress
     volumes:
+      - ..:/workspaces:cached
       - wordpress_data:/var/www/html
-      # Uncomment below to mount your repo as a plugin or theme:
-      # - ..:/var/www/html/wp-content/plugins/my-plugin
     depends_on:
       - db
 
