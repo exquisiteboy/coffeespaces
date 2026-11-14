@@ -4,8 +4,7 @@
   "service": "wordpress",
   "workspaceFolder": "/var/www/html",
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {},
-    "ghcr.io/devcontainers-contrib/features/wp-cli:1": {}
+    "ghcr.io/devcontainers/features/common-utils:2": {}
   },
   "forwardPorts":,
   "portsAttributes": {
@@ -24,4 +23,5 @@
     }
   }
 }
+
 
